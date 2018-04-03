@@ -12,7 +12,7 @@
     
     <title>
         
-            归档 | 
+            论文解读：Fast-SeqSLAM | 
         
         Carpon&#39;s blog
     </title>
@@ -69,15 +69,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档 | Carpon&#39;s blog">
+    <meta property="og:title" content="论文解读：Fast-SeqSLAM | Carpon&#39;s blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="Carpon&#39;s blog">
     
 
     
+        <meta property="article:published_time" content="3月 30, 2018" />
+        <meta property="article:modified_time" content="4月 03, 2018" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档 | Carpon&#39;s blog">
+    <meta name="twitter:title" content="论文解读：Fast-SeqSLAM | Carpon&#39;s blog">
     <meta name="twitter:description" content="Carpon&#39;s blog">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -85,13 +88,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/archives/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/03/30/fast-seqSLAM/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Carpon&#39;s blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Carpon",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "headline": "论文解读：Fast-SeqSLAM",
+    "url": "http://yoursite.com/2018/03/30/fast-seqSLAM/index.html",
+    "datePublished": "3月 30, 2018",
+    "dateModified": "4月 03, 2018",
+    "description": "Carpon&#39;s blog",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
 
 
     
@@ -286,168 +319,275 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法论"><span class="post-toc-number">2.</span> <span class="post-toc-text">方法论</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#讨论"><span class="post-toc-number">3.</span> <span class="post-toc-text">讨论</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/30/fast-seqSLAM/">论文解读：Fast-SeqSLAM</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-Fast-SeqSLAM: A Fast Appearance Based Place Recognition Algor...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/30/fast-seqSLAM/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Carpon's avatar">
-            </div>
-            <div>
-                <strong>Carpon</strong>
-                <span>3月 30, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/03/30/fast-seqSLAM/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/27/hello-world/">Hello World</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Welcome to Hexo
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/27/hello-world/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Carpon's avatar">
-            </div>
-            <div>
-                <strong>Carpon</strong>
-                <span>3月 27, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/03/27/hello-world/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                论文解读：Fast-SeqSLAM
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Carpon</strong>
+        <span>3月 30, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=论文解读：Fast-SeqSLAM&url=http://yoursite.com/2018/03/30/fast-seqSLAM/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=论文解读：Fast-SeqSLAM&url=http://yoursite.com/2018/03/30/fast-seqSLAM/index.html&via=Carpon" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/03/30/fast-seqSLAM/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/03/30/fast-seqSLAM/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>Fast-SeqSLAM: A Fast Appearance Based Place Recognition Algorithm</p>
+</blockquote>
+<p>以下内容属于个人理解，具体请参考原论文。</p>
+<p>简单来说，Fast-SeqSLAM主要是在SeqSLAM上做的改进，使用了一些手段来提升SeqSLAM的速度。</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在SLAM系统中需要实现识别过去曾到过的地点的功能（闭环检测），来优化整个机器人的行走轨迹，以解决位姿漂移的问题。</p>
+<p>然而因为环境中的变化（光照、季节），像过去FAB-MAP 2.0这样基于单幅图像匹配和贝叶斯滤波的系统很容易失败。于是Milford等人提出了SeqSLAM,在地图中寻找一个序列与当前捕获到的图像进行匹配，而不是用单幅图像。</p>
+<p>然而因为这样的搜寻方法会导致非常大的计算复杂度，SeqSLAM 随着地图数据的扩增，计算的时间成本会爆炸增长。基于这一点，这篇文章提出了改进方法。</p>
+<p>为了实现较高的计算效率，作者将保存的地图数据中的图像描述符存储在树中，并使用ANN算法来搜索当前图像的N个最近邻图像。这个N是预先设置的参数。</p>
+<p><strong>与 SeqSLAM 中计算所有可能图像对之间的距离不同，对于每个图像，只计算其距离N个最近邻的距离并将信息存储在稀疏差异矩阵中。除此之外，作者对SeqSLAM中的序列匹配算法做了修改，以便仍然可以找到稀疏差异矩阵中当前序列的最佳匹配。</strong></p>
+<p><strong>具体而言，在修改的 Sequence Matching 算法中，不像原始 SeqSLAM 算法那样进行彻底搜索。相反，只贪婪地从地图上的那些位置中搜索出匹配当前机器人视图的最佳K个位置，这里的K小于N。然后用机器人的速度信息确定地图的哪里搜索下一个。</strong><br>由于构造差异矩阵和贪婪序列搜索算法，Fast-SeqSLAM发现任何两次遍历环境中的所有闭环节点的计算复杂度为O(nlogn)，而SeqSLAM为O(n2)。</p>
+<p>实验证明，Fast-SeqSLAM 在保证准确性的同时，提高了计算效率。</p>
+<h2 id="方法论"><a href="#方法论" class="headerlink" title="方法论"></a>方法论</h2><p>作者对整个闭环检测的定义是——一个由n张图片组成的数据集和m张图片组成的验证集，两组数据中有部分是重合的，闭环检测即是找到所有重合的部分。这里数据集来自先前的采集，验证集可以理解为实验时实时获得的数据。</p>
+<p>Fast-SeqSLAM 的主要流程如下：</p>
+<ol>
+<li>初始化稀疏difference矩阵和score矩阵，使他们具有较高的值</li>
+<li>使用先前的地图（数据集）图像构建一棵树</li>
+<li>为机器人的当前视图找到N个最近邻位置</li>
+<li>用N个位置中每个位置的ANN函数返回的difference value更新稀疏difference矩阵</li>
+<li>对于每个可能的闭环位置（从N中选K个），计算最小difference score并更新机器人的当前位置</li>
+<li>最后，找到当前机器人视图的最佳匹配位置，并将匹配值归一化</li>
+</ol>
+<p>difference value指图像间的差异值，difference score指轨迹上的累计差值</p>
+<p><img src="https://s1.ax1x.com/2018/04/02/9zcUFf.png" alt="9zcUFf.png"></p>
+<p>上图是一个N=2的例子，对每个当前图像只取两个最近邻。三条线表示三种不同的机器人运动速度，其中虚线上的difference score最小，所以选择这条轨迹为机器人的运动轨迹。</p>
+<p>Fast-SeqSLAM 主要做的工作有三个：</p>
+<ol>
+<li>使用了ANN搜索最近邻，避免了线性的查询</li>
+<li>只使用固定N个最近邻填充difference matric，减少了工作量</li>
+<li>使用贪婪的运动估计，用当前运动轨迹推导机器人的位置</li>
+</ol>
+<h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><p>SeqSLAM 这种方法假设了图像的连续性，这种假设是可以成立的。但如果数据集（map）图像比较稀疏是否还能work我觉得还有待实验。</p>
+<p>Fast-SeqSLAM 中提到的运动估计我还是不太理解，估计出的机器人当前位置是作为下一次计算difference score的初始位置吗？可能还需要看源码再理解一下。</p>
+<blockquote>
+<p>有不同看法欢迎发邮件与我交流</p>
+</blockquote>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2018/03/30/fast-seqSLAM/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = '';
+var conf = '';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/03/27/hello-world/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
