@@ -569,8 +569,37 @@
 </blockquote>
 <h3 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h3><p>Boolean类型的字面值<code>true</code>和<code>false</code>是区分大小写的，True和False不是Boolean值</p>
 <p>可以调用函数<code>Boolean()</code>将其他值转换为Boolean类型，转换规则：</p>
-<table><br>  <tr><br>    <th width="15%,">数据类型</th><br>    <th width="40%,">转换为true</th><br>    <th width="45%,">转换为false</th><br>  </tr><br>  <tr><br>    <td> string </td><br>    <td> 任何非空字符串 </td><br>    <td> “”(空字符串) </td><br>  </tr><tr><br>    <td> Number </td><br>    <td> 任何非零数值（包括无穷大） </td><br>    <td> 0和NaN </td><br>  </tr><br>  <tr><br>    <td> Object </td><br>    <td> 任何对象 </td><br>    <td> null </td><br>  </tr><br>  <tr><br>    <td> Undefined </td><br>    <td> 不存在 </td><br>    <td> undefined </td><br>  </tr><br></table>
-
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>转换为true</th>
+<th>转换为false</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string</td>
+<td>任何非空字符串</td>
+<td>“”(空字符串)</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>任何非零数值（包括无穷大）</td>
+<td>0和NaN</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>任何对象</td>
+<td>null</td>
+</tr>
+<tr>
+<td>Undefined</td>
+<td>不存在</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
 <h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><p>除了以十进制表示，整数还可以通过八进制或十六进制的字面值来表示</p>
 <p>其中八进制第一位必须是0，如果字面值中的数值超过了范围，该值将被当作十进制数值解析<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> octalNum1 = <span class="number">070</span>; <span class="comment">// 八进制的56</span></span><br><span class="line"><span class="keyword">var</span> octalNum2 = <span class="number">079</span>; <span class="comment">// 无效 解析为79</span></span><br><span class="line"><span class="keyword">var</span> octalNum3 = <span class="number">08</span>;  <span class="comment">// 无效 解析为8</span></span><br></pre></td></tr></table></figure></p>
 <p>十六进制前两位必须为0x，字母A~F可以大写也可以小写<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hexNum1 = <span class="number">0xA</span>;  <span class="comment">// 十六进制的10</span></span><br><span class="line"><span class="keyword">var</span> hexNum2 = <span class="number">0x1f</span>; <span class="comment">// 十六进制的31</span></span><br></pre></td></tr></table></figure></p>
