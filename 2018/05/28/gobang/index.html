@@ -500,8 +500,10 @@
 <li>判断在落子处的相邻八个位置搜索是否有相同颜色的棋子</li>
 <li>如果有就递归继续搜索</li>
 <li>同时反向搜索相同颜色的棋子，计总和</li>
-<li>合计总数超过5则判断胜利，游戏结束<h2 id="历史版本"><a href="#历史版本" class="headerlink" title="历史版本"></a>历史版本</h2><h3 id="1-0-版本"><a href="#1-0-版本" class="headerlink" title="1.0 版本"></a>1.0 版本</h3>最早做这个五子棋的时候用的是dom操作和图片，在页面中插入棋子的图片，这种方法灵活性太低。<h3 id="2-0-版本"><a href="#2-0-版本" class="headerlink" title="2.0 版本"></a>2.0 版本</h3>后来改用了html5新增的canvas，手动绘制棋盘和棋子，感觉还不错，当时很快就重构完了。这一版还增加了自适应，可以自由缩放页面的大小（只要比棋盘大就可以）</li>
+<li>合计总数超过5则判断胜利，游戏结束</li>
 </ol>
+<h2 id="历史版本"><a href="#历史版本" class="headerlink" title="历史版本"></a>历史版本</h2><h3 id="1-0-版本"><a href="#1-0-版本" class="headerlink" title="1.0 版本"></a>1.0 版本</h3><p>最早做这个五子棋的时候用的是dom操作和图片，在页面中插入棋子的图片，这种方法灵活性太低。</p>
+<h3 id="2-0-版本"><a href="#2-0-版本" class="headerlink" title="2.0 版本"></a>2.0 版本</h3><p>后来改用了html5新增的canvas，手动绘制棋盘和棋子，感觉还不错，当时很快就重构完了。这一版还增加了自适应，可以自由缩放页面的大小（只要比棋盘大就可以）</p>
 <h3 id="2-0-联机版"><a href="#2-0-联机版" class="headerlink" title="2.0 联机版"></a>2.0 联机版</h3><p>学习了node.js之后又给项目添加了局域网联机的功能，使用的是<a href="https://socket.io/" target="_blank" rel="noopener">socket.io</a>提供的websocket通信，参考了socket.io的<a href="https://github.com/socketio/socket.io/tree/master/examples/chat" target="_blank" rel="noopener">示例代码</a></p>
 <p>这里使用广播方式向另一个用户发送落子的信息，同时在他的页面上实时更新出来。那么也带来一个问题，如果向所有人（除自己外）广播那么棋子会显示在所有其他人的棋盘上。当浏览页面的人数超过二时，后面的人就是必须是观战状态。</p>
 <p>这肯定存在解决方法，如使用每个人独立的key，但是还没有解决</p>
