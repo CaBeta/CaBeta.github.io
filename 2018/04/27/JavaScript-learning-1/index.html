@@ -529,9 +529,17 @@
 </blockquote>
 <h2 id="3-3-变量"><a href="#3-3-变量" class="headerlink" title="3.3 变量"></a>3.3 变量</h2><p>ECMAScript中的变量可以保存任何类型的数据。</p>
 <p>声明但未初始化的变量会保存一个特殊的值——undefined</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> msg;</span><br><span class="line"><span class="built_in">console</span>.log(msg); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript"> var msg;
+ console.log(msg); // undefined
+</code></pre>
 <p>注意，用<code>var</code>定义的变量将成为定义该变量<strong>作用域</strong>中的局部变量</p>
-<p>如果在函数内使用<code>var</code>定义一个变量，这个变量在函数退出后就会被销毁<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> msg = <span class="string">'test'</span>;</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br><span class="line">alert(msg); <span class="comment">//error</span></span><br></pre></td></tr></table></figure></p>
+<p>如果在函数内使用<code>var</code>定义一个变量，这个变量在函数退出后就会被销毁</p>
+<pre><code class="javascript">function test(){
+    var msg = &#39;test&#39;;
+}
+test();
+alert(msg); //error
+</code></pre>
 <h2 id="3-4-数据类型"><a href="#3-4-数据类型" class="headerlink" title="3.4 数据类型"></a>3.4 数据类型</h2><p>ECMAScript中有5种简单数据类型（基本数据类型）：Undefined、Null、Boolean、Number、String</p>
 <p>还有一种<strong>复杂数据类型</strong>——Object</p>
 <blockquote>
@@ -562,8 +570,12 @@
 <p>显示地初始化变量便可以使用<code>typeof</code>来判断变量是否被声明</p>
 </blockquote>
 <h3 id="Null"><a href="#Null" class="headerlink" title="Null"></a>Null</h3><p>Null类型也只有一个值，这个值为<code>null</code></p>
-<p><code>undefined</code>值派生自<code>null</code>，因此会出现比较奇怪的情况<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="literal">null</span> == <span class="literal">undefined</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
-<p>用严格等可以将它们区分开<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="literal">null</span> === <span class="literal">undefined</span>); <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
+<p><code>undefined</code>值派生自<code>null</code>，因此会出现比较奇怪的情况</p>
+<pre><code class="javascript">alert(null == undefined); //true
+</code></pre>
+<p>用严格等可以将它们区分开</p>
+<pre><code class="javascript">alert(null === undefined); //false
+</code></pre>
 <blockquote>
 <p>推荐将准备保存对象的变量初始化为<code>null</code></p>
 </blockquote>
@@ -601,20 +613,40 @@
 </tbody>
 </table>
 <h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><p>除了以十进制表示，整数还可以通过八进制或十六进制的字面值来表示</p>
-<p>其中八进制第一位必须是0，如果字面值中的数值超过了范围，该值将被当作十进制数值解析<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> octalNum1 = <span class="number">070</span>; <span class="comment">// 八进制的56</span></span><br><span class="line"><span class="keyword">var</span> octalNum2 = <span class="number">079</span>; <span class="comment">// 无效 解析为79</span></span><br><span class="line"><span class="keyword">var</span> octalNum3 = <span class="number">08</span>;  <span class="comment">// 无效 解析为8</span></span><br></pre></td></tr></table></figure></p>
-<p>十六进制前两位必须为0x，字母A~F可以大写也可以小写<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hexNum1 = <span class="number">0xA</span>;  <span class="comment">// 十六进制的10</span></span><br><span class="line"><span class="keyword">var</span> hexNum2 = <span class="number">0x1f</span>; <span class="comment">// 十六进制的31</span></span><br></pre></td></tr></table></figure></p>
+<p>其中八进制第一位必须是0，如果字面值中的数值超过了范围，该值将被当作十进制数值解析</p>
+<pre><code class="javascript">var octalNum1 = 070; // 八进制的56
+var octalNum2 = 079; // 无效 解析为79
+var octalNum3 = 08;  // 无效 解析为8
+</code></pre>
+<p>十六进制前两位必须为0x，字母A~F可以大写也可以小写</p>
+<pre><code class="javascript">var hexNum1 = 0xA;  // 十六进制的10
+var hexNum2 = 0x1f; // 十六进制的31
+</code></pre>
 <p>在进行计算时，所有八进制和十六进制的数值最终都会被转换成十进制</p>
 <blockquote>
-<p>八进制字面量在严格模式下会报错<br>浮点数小数点前面可以没有整数，但不推荐<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> floatNum = <span class="number">.1</span>; <span class="comment">//有效，但不推荐</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>由于保存浮点数值需要的内存空间是保存整数的两倍，ECMAScript会尽量将浮点数转换为整数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> floatNum1 = <span class="number">1.</span>;    <span class="comment">// 小数点后没有数字 解析为1</span></span><br><span class="line"><span class="keyword">var</span> floatNum2 = <span class="number">10.0</span>;  <span class="comment">// 整数 解析为10</span></span><br></pre></td></tr></table></figure></p>
-<p>可以使用e表示法（科学计数法），e可以大写也可以小写<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> floatNum = <span class="number">1.125e7</span>; <span class="comment">// 等于11250000</span></span><br></pre></td></tr></table></figure></p>
+<p>八进制字面量在严格模式下会报错<br>浮点数小数点前面可以没有整数，但不推荐</p>
+<pre><code class="javascript">var floatNum = .1; //有效，但不推荐
+</code></pre>
+<p>由于保存浮点数值需要的内存空间是保存整数的两倍，ECMAScript会尽量将浮点数转换为整数</p>
+<pre><code class="javascript">var floatNum1 = 1.;    // 小数点后没有数字 解析为1
+var floatNum2 = 10.0;  // 整数 解析为10
+</code></pre>
+<p>可以使用e表示法（科学计数法），e可以大写也可以小写</p>
+<pre><code class="javascript">var floatNum = 1.125e7; // 等于11250000
+</code></pre>
 <p>浮点数的最高精度是17位小数，但在计算时其精度远远不如整数</p>
-<p>例如，0.1+0.2的结果不是0.3而是0.30000000000000004<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a + b == <span class="number">0.3</span>)&#123;      <span class="comment">// 不要这么做</span></span><br><span class="line">    alert(<span class="string">"a+b=0.3"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>例如，0.1+0.2的结果不是0.3而是0.30000000000000004</p>
+<pre><code class="javascript">if (a + b == 0.3){      // 不要这么做
+    alert(&quot;a+b=0.3&quot;);
+}
+</code></pre>
 <p><strong>永远不要测试某个特定的浮点数值</strong><br>ECMAScipt中的最小值保存在<code>Number.MIN_VALUE</code>中，在大多数浏览器中为<code>5e-324</code></p>
 <p>最大值保存在<code>Number.MAX_VALUE</code>中，在大多数浏览器中为<code>1.7976931348623157e+308</code></p>
 <p>如果某个数超出JavaScript数值范围，这个数将被转换成<code>Infinity</code>，负数转换成<code>-Infinity</code></p>
-<p>可以使用<code>isFinity</code>来确定一个数是不是有穷的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="built_in">isFinite</span>(<span class="built_in">Number</span>.MAX_VALUE + <span class="built_in">Number</span>.MAX_VALUE)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
+<p>可以使用<code>isFinity</code>来确定一个数是不是有穷的</p>
+<pre><code class="javascript">alert(isFinite(Number.MAX_VALUE + Number.MAX_VALUE)); // false
+</code></pre>
 <blockquote>
 <p>访问<code>Number.NEGATIVE_INFINITY</code>和<code>Number.POSITIVE_INFINITY</code>也可以得到负和正的<code>Infinity</code></p>
 </blockquote>
@@ -624,25 +656,61 @@
 <li>任何涉及<code>NaN</code>的操作都会返回<code>NaN</code></li>
 <li><code>NaN</code>与任何值都不想等，包括<code>NaN</code>本身</li>
 </ol>
-<p><code>isNaN()</code>函数可以帮我们确定一个数是否“不是数值”,非数值类型会先转换为数值类型再判定<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="built_in">isNaN</span>(<span class="number">10</span>));       <span class="comment">// false</span></span><br><span class="line">alert(<span class="built_in">isNaN</span>(<span class="string">"10"</span>));     <span class="comment">// false</span></span><br><span class="line">alert(<span class="built_in">isNaN</span>(<span class="string">"blue"</span>));   <span class="comment">// true(不能转换为数值)</span></span><br><span class="line">alert(<span class="built_in">isNaN</span>(<span class="literal">true</span>));     <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
+<p><code>isNaN()</code>函数可以帮我们确定一个数是否“不是数值”,非数值类型会先转换为数值类型再判定</p>
+<pre><code class="javascript">alert(isNaN(10));       // false
+alert(isNaN(&quot;10&quot;));     // false
+alert(isNaN(&quot;blue&quot;));   // true(不能转换为数值)
+alert(isNaN(true));     // false
+</code></pre>
 <p>有三个函数可以把非数值转换为数值：<code>Number()</code>、<code>parseInt()</code>和<code>parseFloat()</code></p>
-<p><code>Number()</code>在转换字符串时比较复杂而且不够合理，因此在处理整数时常用的是<code>parseInt()</code>函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1 = <span class="built_in">Number</span>(<span class="string">"hello"</span>);     <span class="comment">// NaN</span></span><br><span class="line"><span class="keyword">var</span> num2 = <span class="built_in">Number</span>(<span class="string">"66hello"</span>);   <span class="comment">// NaN</span></span><br><span class="line"><span class="keyword">var</span> num3 = <span class="built_in">Number</span>(<span class="string">"070"</span>);       <span class="comment">// 70</span></span><br><span class="line"><span class="keyword">var</span> num4 = <span class="built_in">Number</span>(<span class="string">""</span>);          <span class="comment">// 0</span></span><br><span class="line"><span class="keyword">var</span> num5 = <span class="built_in">Number</span>(<span class="string">"0xA"</span>);       <span class="comment">// 10 解析为16进制</span></span><br><span class="line"><span class="keyword">var</span> num6 = <span class="built_in">parseInt</span>(<span class="string">"hello"</span>);   <span class="comment">// NaN</span></span><br><span class="line"><span class="keyword">var</span> num7 = <span class="built_in">parseInt</span>(<span class="string">"66hello"</span>); <span class="comment">// 66</span></span><br><span class="line"><span class="keyword">var</span> num8 = <span class="built_in">parseInt</span>(<span class="string">"070"</span>);     <span class="comment">// 70 ES3会理解为8进制，ES5之后会忽略前导0解析为10进制</span></span><br><span class="line"><span class="keyword">var</span> num9 = <span class="built_in">parseInt</span>(<span class="string">""</span>);        <span class="comment">// NaN</span></span><br><span class="line"><span class="keyword">var</span> num10 = <span class="built_in">parseInt</span>(<span class="number">22.5</span>);      <span class="comment">// 22</span></span><br><span class="line"><span class="keyword">var</span> num11 = <span class="built_in">parseInt</span>(<span class="string">"0xA"</span>);     <span class="comment">// 10</span></span><br></pre></td></tr></table></figure></p>
-<p>为了消除<code>parseInt()</code>函数可能导致的困惑，可以提供第二个参数，指定转换使用的基数（即多少进制）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1 = <span class="built_in">parseInt</span>(<span class="string">"0xAF"</span>, <span class="number">16</span>); <span class="comment">// 175</span></span><br><span class="line"><span class="keyword">var</span> num2 = <span class="built_in">parseInt</span>(<span class="string">"AF"</span>, <span class="number">16</span>);   <span class="comment">// 175</span></span><br><span class="line"><span class="keyword">var</span> num3 = <span class="built_in">parseInt</span>(<span class="string">"AF"</span>);       <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure></p>
+<p><code>Number()</code>在转换字符串时比较复杂而且不够合理，因此在处理整数时常用的是<code>parseInt()</code>函数</p>
+<pre><code class="javascript">var num1 = Number(&quot;hello&quot;);     // NaN
+var num2 = Number(&quot;66hello&quot;);   // NaN
+var num3 = Number(&quot;070&quot;);       // 70
+var num4 = Number(&quot;&quot;);          // 0
+var num5 = Number(&quot;0xA&quot;);       // 10 解析为16进制
+var num6 = parseInt(&quot;hello&quot;);   // NaN
+var num7 = parseInt(&quot;66hello&quot;); // 66
+var num8 = parseInt(&quot;070&quot;);     // 70 ES3会理解为8进制，ES5之后会忽略前导0解析为10进制
+var num9 = parseInt(&quot;&quot;);        // NaN
+var num10 = parseInt(22.5);      // 22
+var num11 = parseInt(&quot;0xA&quot;);     // 10
+</code></pre>
+<p>为了消除<code>parseInt()</code>函数可能导致的困惑，可以提供第二个参数，指定转换使用的基数（即多少进制）</p>
+<pre><code class="javascript">var num1 = parseInt(&quot;0xAF&quot;, 16); // 175
+var num2 = parseInt(&quot;AF&quot;, 16);   // 175
+var num3 = parseInt(&quot;AF&quot;);       // NaN
+</code></pre>
 <blockquote>
 <p>推荐在任何时候都指定转换使用的基数，一般情况下为10</p>
 </blockquote>
-<p>而<code>parseFloat()</code>会始终忽略前导0<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1 = <span class="built_in">parseFloat</span>(<span class="string">"1234blue"</span>); <span class="comment">// 1234</span></span><br><span class="line"><span class="keyword">var</span> num2 = <span class="built_in">parseFloat</span>(<span class="string">"0xA"</span>);      <span class="comment">// 10</span></span><br><span class="line"><span class="keyword">var</span> num3 = <span class="built_in">parseFloat</span>(<span class="string">"22.5"</span>);     <span class="comment">// 22.5</span></span><br><span class="line"><span class="keyword">var</span> num3 = <span class="built_in">parseFloat</span>(<span class="string">"22.34.5"</span>);  <span class="comment">// 22.34</span></span><br><span class="line"><span class="keyword">var</span> num3 = <span class="built_in">parseFloat</span>(<span class="string">"0908.5"</span>);   <span class="comment">// 908.5</span></span><br><span class="line"><span class="keyword">var</span> num3 = <span class="built_in">parseFloat</span>(<span class="string">"3.125e7"</span>);  <span class="comment">// 31250000</span></span><br></pre></td></tr></table></figure></p>
+<p>而<code>parseFloat()</code>会始终忽略前导0</p>
+<pre><code class="javascript">var num1 = parseFloat(&quot;1234blue&quot;); // 1234
+var num2 = parseFloat(&quot;0xA&quot;);      // 10
+var num3 = parseFloat(&quot;22.5&quot;);     // 22.5
+var num3 = parseFloat(&quot;22.34.5&quot;);  // 22.34
+var num3 = parseFloat(&quot;0908.5&quot;);   // 908.5
+var num3 = parseFloat(&quot;3.125e7&quot;);  // 31250000
+</code></pre>
 <p>能解析为整数的数<code>parseFloat()</code>会返回整数</p>
 <h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>字符串可以用双引号<code>&quot;&quot;</code>可以用单引号<code>&#39;&#39;</code>表示</p>
 <p>ECMAScript中的字符串是不可变的，一旦创建值就不能改变</p>
-<p>如果要改变某个变量保存的字符串，要先销毁原来的字符串，然后再用一个包含新值的字符串填充该变量<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> lang = <span class="string">"Java"</span>;</span><br><span class="line">lang = lang + <span class="string">"Script"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>如果要改变某个变量保存的字符串，要先销毁原来的字符串，然后再用一个包含新值的字符串填充该变量</p>
+<pre><code class="javascript">var lang = &quot;Java&quot;;
+lang = lang + &quot;Script&quot;;
+</code></pre>
 <p>在实现第二行代码时，操作过程如下：</p>
 <ol>
 <li>首先创建一个能容纳10个字符的新字符串</li>
 <li>然后在这个字符串中填充”Java”和”Script”</li>
 <li>销毁原来的字符串”Java”和字符串”Script”</li>
 </ol>
-<p>可以使用<code>toString()</code>方法来把一个值转换为字符串<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">11</span>;</span><br><span class="line"><span class="keyword">var</span> ageString = age.toString();       <span class="comment">// "11"</span></span><br><span class="line"><span class="keyword">var</span> found = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> foundAsString = found.toString(); <span class="comment">// "true"</span></span><br></pre></td></tr></table></figure></p>
+<p>可以使用<code>toString()</code>方法来把一个值转换为字符串</p>
+<pre><code class="javascript">var age = 11;
+var ageString = age.toString();       // &quot;11&quot;
+var found = true;
+var foundAsString = found.toString(); // &quot;true&quot;
+</code></pre>
 <p><code>null</code>和<code>undefined</code>没有<code>toString()</code>方法</p>
 <p>再调用数值的<code>toString()</code>方法时可以传入一个参数来决定输出数值的基数</p>
 <p>如果值可能是<code>null</code>和<code>undefined</code>，还可以使用<code>String()</code>函数</p>
