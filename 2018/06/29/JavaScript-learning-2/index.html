@@ -12,7 +12,7 @@
     
     <title>
         
-            归档: 2018/6 | 
+            《javaScript高级程序设计》读书笔记(二) | 
         
         Carpon&#39;s blog
     </title>
@@ -69,15 +69,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018/6 | Carpon&#39;s blog">
+    <meta property="og:title" content="《javaScript高级程序设计》读书笔记(二) | Carpon&#39;s blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="Carpon&#39;s blog">
     
 
     
+        <meta property="article:published_time" content="6月 29, 2018" />
+        <meta property="article:modified_time" content="6月 29, 2018" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2018/6 | Carpon&#39;s blog">
+    <meta name="twitter:title" content="《javaScript高级程序设计》读书笔记(二) | Carpon&#39;s blog">
     <meta name="twitter:description" content="Carpon&#39;s blog">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -85,13 +88,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/archives/2018/06/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/06/29/JavaScript-learning-2/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Carpon&#39;s blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Carpon",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "headline": "《javaScript高级程序设计》读书笔记(二)",
+    "url": "http://yoursite.com/2018/06/29/JavaScript-learning-2/index.html",
+    "datePublished": "6月 29, 2018",
+    "dateModified": "6月 29, 2018",
+    "description": "Carpon&#39;s blog",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
 
 
     
@@ -286,173 +319,309 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-5-操作符"><span class="post-toc-number">1.</span> <span class="post-toc-text">3.5 操作符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一元操作符"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">一元操作符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#位操作符"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">位操作符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-按位非（-）"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">1.按位非（~）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-按位与（-amp-）"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2.按位与（&amp;）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-按位或（-）"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">3.按位或（|）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-按位异或（-）"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">4.按位异或（^）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-左移（-lt-lt-）"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">5.左移（&lt;&lt;）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6-右移（-gt-gt-）"><span class="post-toc-number">1.2.6.</span> <span class="post-toc-text">6.右移（&gt;&gt;）</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#布尔操作符"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">布尔操作符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-逻辑非（！）"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">1.逻辑非（！）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-逻辑与（-amp-amp-）"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">2.逻辑与（&amp;&amp;）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-逻辑或（-）"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">3.逻辑或（||）</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#乘性操作符"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">乘性操作符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-乘法"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">1.乘法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-除法"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">2.除法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-求模"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">3.求模</span></a></li></ol></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/06/29/JavaScript-learning-2/">《javaScript高级程序设计》读书笔记(二)</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-以下内容可能存在个人理解的部分，并非完全参照原文
-
-
-如有...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/06/29/JavaScript-learning-2/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Carpon's avatar">
-            </div>
-            <div>
-                <strong>Carpon</strong>
-                <span>6月 29, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/06/29/JavaScript-learning-2/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/06/28/js-good-part-1/">《javaScript语言精粹》读书笔记(一)</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            非常精简的一本书，我在这里也不写太多东西，只挑选比较引起我注意的部分进行记录，并附加一些自己的理解
-
-这不是一...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/06/28/js-good-part-1/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Carpon's avatar">
-            </div>
-            <div>
-                <strong>Carpon</strong>
-                <span>6月 28, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/06/28/js-good-part-1/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                《javaScript高级程序设计》读书笔记(二)
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Carpon</strong>
+        <span>6月 29, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=《javaScript高级程序设计》读书笔记(二)&url=http://yoursite.com/2018/06/29/JavaScript-learning-2/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=《javaScript高级程序设计》读书笔记(二)&url=http://yoursite.com/2018/06/29/JavaScript-learning-2/index.html&via=Carpon" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/06/29/JavaScript-learning-2/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/06/29/JavaScript-learning-2/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>以下内容可能存在个人理解的部分，并非完全参照原文</p>
+</blockquote>
+<blockquote>
+<p>如有疑问，请以书中内容为准</p>
+</blockquote>
+<p>接着<a href="https://cabeta.github.io/2018/04/27/JavaScript-learning-1/" target="_blank" rel="noopener">上一篇</a>的内容</p>
+<h2 id="3-5-操作符"><a href="#3-5-操作符" class="headerlink" title="3.5 操作符"></a>3.5 操作符</h2><p>在应用于对象时，相应的操作符通常会调用对象的<code>valueOf()</code>和（或）<code>toString()</code>方法</p>
+<h3 id="一元操作符"><a href="#一元操作符" class="headerlink" title="一元操作符"></a>一元操作符</h3><p>递增<code>++</code>和递减<code>--</code>操作符直接借鉴于C<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">29</span>;</span><br><span class="line">++age;</span><br></pre></td></tr></table></figure></p>
+<p>前置表示运算前加，后置表示运算后加<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1 = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> num2 = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">var</span> num3 = num1-- + num2; <span class="comment">// 22</span></span><br><span class="line"><span class="keyword">var</span> num4 = num1 + num2; <span class="comment">// 21</span></span><br></pre></td></tr></table></figure></p>
+<p>递减也是一样</p>
+<p>一元<code>+</code>和<code>-</code>操作符与数学书上相同</p>
+<p>不过在用于非数值类型时，该操作符会像<code>Number()</code>转型函数一样对这个值进行转换</p>
+<blockquote>
+<p>递增和递减操作符也是如此</p>
+</blockquote>
+<h3 id="位操作符"><a href="#位操作符" class="headerlink" title="位操作符"></a>位操作符</h3><p>ECMAScript中所有的数值都以 <strong>IEEE-754 64位</strong> 格式存储，但操作符并不直接操作64位的值。而是先将64位的值转换为32位的整数，然后执行操作，最后再将结果转回64位。</p>
+<p>对于有符号的整数，32位中的前31位用于表示整数的值。第32位用于表示数值的符号：0表示正数，1表示负数。这个表示符号的位叫做 <strong>符号位</strong>。</p>
+<p>负数会使用 <strong>二进制补码</strong> 存储。</p>
+<p>然而ECMASript会尽力隐藏这些信息<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">-18</span>;</span><br><span class="line">alert(num.toString(<span class="number">2</span>)); <span class="comment">// "-10010"</span></span><br></pre></td></tr></table></figure></p>
+<p>在以二进制字符串形式输出一个负数时，我们看到的只是这个负数绝对值的二进制码前面加上了一个负号。</p>
+<p><strong>注意</strong>：在对NaN和Infinity值进行位操作时，这两个值都会被当成0来处理。</p>
+<h4 id="1-按位非（-）"><a href="#1-按位非（-）" class="headerlink" title="1.按位非（~）"></a>1.按位非（~）</h4><p>严格意义来说，按位非操作符<code>~</code>，是将数值的二进制码按位取反</p>
+<blockquote>
+<p>书上原文说的是返回数值的反码,但根据定义正数的反码是它本身<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1 = <span class="number">25</span>;      <span class="comment">// 二进制 00000000000000000000000000011001</span></span><br><span class="line"><span class="keyword">var</span> num2 = ~num1;   <span class="comment">// 二进制 11111111111111111111111111100110</span></span><br><span class="line">alert(num2);        <span class="comment">// -26</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>简单来说，按位非操作的结果就是：操作数的负值减1</p>
+<blockquote>
+<p>按位非是在数值表示的最底层执行操作，因此速度更快</p>
+</blockquote>
+<h4 id="2-按位与（-amp-）"><a href="#2-按位与（-amp-）" class="headerlink" title="2.按位与（&amp;）"></a>2.按位与（&amp;）</h4><p>从本质上讲，按位与操作就是将两个数值的每一位对齐，然后按位进行与操作。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = <span class="number">25</span> &amp; <span class="number">3</span>;</span><br><span class="line"><span class="comment">// 25 00000000000000000000000000011001</span></span><br><span class="line"><span class="comment">//  3 00000000000000000000000000000001</span></span><br><span class="line">alert(result); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
+<p>它们对应位上只有一位同时是1</p>
+<h4 id="3-按位或（-）"><a href="#3-按位或（-）" class="headerlink" title="3.按位或（|）"></a>3.按位或（|）</h4><p>同理，按位进行或操作</p>
+<h4 id="4-按位异或（-）"><a href="#4-按位异或（-）" class="headerlink" title="4.按位异或（^）"></a>4.按位异或（^）</h4><p>异或就是相异为1相同为0</p>
+<h4 id="5-左移（-lt-lt-）"><a href="#5-左移（-lt-lt-）" class="headerlink" title="5.左移（&lt;&lt;）"></a>5.左移（&lt;&lt;）</h4><p>直接上代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oldValue = <span class="number">2</span>;               <span class="comment">// 等于二进制的 10</span></span><br><span class="line"><span class="keyword">var</span> newValue = olaValue &lt;&lt; <span class="number">5</span>;   <span class="comment">// 等于二进制的 1000000，十进制的64</span></span><br></pre></td></tr></table></figure></p>
+<p>注意，左移不会影响符号位。如果将-2向左移动5位，结果将是-64。</p>
+<h4 id="6-右移（-gt-gt-）"><a href="#6-右移（-gt-gt-）" class="headerlink" title="6.右移（&gt;&gt;）"></a>6.右移（&gt;&gt;）</h4><p>一样，但是被移出去的位会消失<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oldValue = <span class="number">64</span>;               <span class="comment">// 等于二进制的 1000000</span></span><br><span class="line"><span class="keyword">var</span> newValue = olaValue &gt;&gt; <span class="number">5</span>;    <span class="comment">// 等于二进制的 10，十进制的2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">var</span> b = a &gt;&gt; <span class="number">1</span>; <span class="comment">// 1</span></span><br><span class="line"><span class="keyword">var</span> c = a &gt;&gt; <span class="number">2</span>; <span class="comment">// 0</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="布尔操作符"><a href="#布尔操作符" class="headerlink" title="布尔操作符"></a>布尔操作符</h3><p>主要要注意的是非布尔类型的转换</p>
+<h4 id="1-逻辑非（！）"><a href="#1-逻辑非（！）" class="headerlink" title="1.逻辑非（！）"></a>1.逻辑非（！）</h4><ul>
+<li>如果操作数是一个对象，返回false</li>
+<li>如果操作数是一个空字符串，返回true，非空则返回false</li>
+<li>如果操作数是数值0，返回true,任意非0数值（包括Infinity）返回false</li>
+<li>如果操作数是null，返回true</li>
+<li>如果操作数是NaN，返回true</li>
+<li>如果操作数是undefined，返回true</li>
+</ul>
+<p>实际上这就是把操作数用<code>Boolean()</code>函数转换后进行逻辑非运算</p>
+<h4 id="2-逻辑与（-amp-amp-）"><a href="#2-逻辑与（-amp-amp-）" class="headerlink" title="2.逻辑与（&amp;&amp;）"></a>2.逻辑与（&amp;&amp;）</h4><p>这里有一个特点：如果第一个操作数是对象，且第一个操作数求值结果为true时返回第二个操作数，而第一个操作数是undefined则返回undefined</p>
+<p>因此会有一种技巧<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = (res &amp;&amp; res.result); <span class="comment">// res由其他地方传入</span></span><br></pre></td></tr></table></figure></p>
+<p>如果res未被定义则会返回undefined，而不会因为访问了undefined的属性而报错</p>
+<p>不用再写繁琐的if结构<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(res)&#123;</span><br><span class="line">    <span class="keyword">var</span> result = res.result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-逻辑或（-）"><a href="#3-逻辑或（-）" class="headerlink" title="3.逻辑或（||）"></a>3.逻辑或（||）</h4><p>这里有点不同：如果第一个操作数是对象则返回第一个操作数，如果第一个操作数求值结果为false返回第二个操作数，如果两个操作数都是undefined则返回undefined</p>
+<p>看例子比较明白<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    a = a || <span class="number">1</span></span><br><span class="line">    b = b || <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> a+b</span><br><span class="line">&#125;</span><br><span class="line">sum(); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
+<p>可以用这个特性做函数变量的默认值</p>
+<h3 id="乘性操作符"><a href="#乘性操作符" class="headerlink" title="乘性操作符"></a>乘性操作符</h3><p>ECMAScript定义了三个乘性操作符：乘法、除法、求模</p>
+<p>如果操作数不是数值，会先使用<code>Number()</code>将其转换为数值</p>
+<p>只谈特殊情况</p>
+<h4 id="1-乘法"><a href="#1-乘法" class="headerlink" title="1.乘法"></a>1.乘法</h4><ul>
+<li>乘积如果超过ECMAScript数值的表示范围，则返回<code>Infinity</code>或<code>-Infinity</code></li>
+<li>如果有一个操作数是NaN，则结果是<code>NaN</code></li>
+<li>如果是Infinity与0相乘，则结果是<code>NaN</code></li>
+<li>如果是Infinity与非0整数(包括Infinity)相乘，则结果是<code>Infinity</code>或<code>-Infinity</code></li>
+</ul>
+<h4 id="2-除法"><a href="#2-除法" class="headerlink" title="2.除法"></a>2.除法</h4><ul>
+<li>如果有一个操作数是NaN，则结果是<code>NaN</code></li>
+<li>如果Infinity被Infinity除，结果是<code>NaN</code></li>
+<li>如果是零被零除，结果是<code>NaN</code></li>
+<li>如果是非零的有限数被零除，则结果是<code>Infinity</code>或<code>-Infinity</code></li>
+</ul>
+<h4 id="3-求模"><a href="#3-求模" class="headerlink" title="3.求模"></a>3.求模</h4><p>可以按照除法理解</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2018/06/29/JavaScript-learning-2/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = '';
+var conf = '';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/06/28/js-good-part-1/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
