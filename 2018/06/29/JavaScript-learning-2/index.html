@@ -502,8 +502,16 @@
 </blockquote>
 <p>接着<a href="https://cabeta.github.io/2018/04/27/JavaScript-learning-1/" target="_blank" rel="noopener">上一篇</a>的内容</p>
 <h2 id="3-5-操作符"><a href="#3-5-操作符" class="headerlink" title="3.5 操作符"></a>3.5 操作符</h2><p>在应用于对象时，相应的操作符通常会调用对象的<code>valueOf()</code>和（或）<code>toString()</code>方法</p>
-<h3 id="一元操作符"><a href="#一元操作符" class="headerlink" title="一元操作符"></a>一元操作符</h3><p>递增<code>++</code>和递减<code>--</code>操作符直接借鉴于C<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">29</span>;</span><br><span class="line">++age;</span><br></pre></td></tr></table></figure></p>
-<p>前置表示运算前加，后置表示运算后加<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1 = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> num2 = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">var</span> num3 = num1-- + num2; <span class="comment">// 22</span></span><br><span class="line"><span class="keyword">var</span> num4 = num1 + num2; <span class="comment">// 21</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="一元操作符"><a href="#一元操作符" class="headerlink" title="一元操作符"></a>一元操作符</h3><p>递增<code>++</code>和递减<code>--</code>操作符直接借鉴于C</p>
+<pre><code class="javascript">var age = 29;
+++age;
+</code></pre>
+<p>前置表示运算前加，后置表示运算后加</p>
+<pre><code class="javascript">var num1 = 2;
+var num2 = 20;
+var num3 = num1-- + num2; // 22
+var num4 = num1 + num2; // 21
+</code></pre>
 <p>递减也是一样</p>
 <p>一元<code>+</code>和<code>-</code>操作符与数学书上相同</p>
 <p>不过在用于非数值类型时，该操作符会像<code>Number()</code>转型函数一样对这个值进行转换</p>
@@ -513,25 +521,46 @@
 <h3 id="位操作符"><a href="#位操作符" class="headerlink" title="位操作符"></a>位操作符</h3><p>ECMAScript中所有的数值都以 <strong>IEEE-754 64位</strong> 格式存储，但操作符并不直接操作64位的值。而是先将64位的值转换为32位的整数，然后执行操作，最后再将结果转回64位。</p>
 <p>对于有符号的整数，32位中的前31位用于表示整数的值。第32位用于表示数值的符号：0表示正数，1表示负数。这个表示符号的位叫做 <strong>符号位</strong>。</p>
 <p>负数会使用 <strong>二进制补码</strong> 存储。</p>
-<p>然而ECMASript会尽力隐藏这些信息<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">-18</span>;</span><br><span class="line">alert(num.toString(<span class="number">2</span>)); <span class="comment">// "-10010"</span></span><br></pre></td></tr></table></figure></p>
+<p>然而ECMASript会尽力隐藏这些信息</p>
+<pre><code class="javascript">var num = -18;
+alert(num.toString(2)); // &quot;-10010&quot;
+</code></pre>
 <p>在以二进制字符串形式输出一个负数时，我们看到的只是这个负数绝对值的二进制码前面加上了一个负号。</p>
 <p><strong>注意</strong>：在对NaN和Infinity值进行位操作时，这两个值都会被当成0来处理。</p>
 <h4 id="1-按位非（-）"><a href="#1-按位非（-）" class="headerlink" title="1.按位非（~）"></a>1.按位非（~）</h4><p>严格意义来说，按位非操作符<code>~</code>，是将数值的二进制码按位取反</p>
 <blockquote>
 <p>书上原文说的是返回数值的反码,但根据定义正数的反码是它本身</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1 = <span class="number">25</span>;      <span class="comment">// 二进制 00000000000000000000000000011001</span></span><br><span class="line"><span class="keyword">var</span> num2 = ~num1;   <span class="comment">// 二进制 11111111111111111111111111100110</span></span><br><span class="line">alert(num2);        <span class="comment">// -26</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">var num1 = 25;      // 二进制 00000000000000000000000000011001
+var num2 = ~num1;   // 二进制 11111111111111111111111111100110
+alert(num2);        // -26
+</code></pre>
 <p>简单来说，按位非操作的结果就是：操作数的负值减1</p>
 <blockquote>
 <p>按位非是在数值表示的最底层执行操作，因此速度更快</p>
 </blockquote>
-<h4 id="2-按位与（-amp-）"><a href="#2-按位与（-amp-）" class="headerlink" title="2.按位与（&amp;）"></a>2.按位与（&amp;）</h4><p>从本质上讲，按位与操作就是将两个数值的每一位对齐，然后按位进行与操作。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = <span class="number">25</span> &amp; <span class="number">3</span>;</span><br><span class="line"><span class="comment">// 25 00000000000000000000000000011001</span></span><br><span class="line"><span class="comment">//  3 00000000000000000000000000000001</span></span><br><span class="line">alert(result); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="2-按位与（-amp-）"><a href="#2-按位与（-amp-）" class="headerlink" title="2.按位与（&amp;）"></a>2.按位与（&amp;）</h4><p>从本质上讲，按位与操作就是将两个数值的每一位对齐，然后按位进行与操作。</p>
+<pre><code class="javascript">var result = 25 &amp; 3;
+// 25 00000000000000000000000000011001
+//  3 00000000000000000000000000000001
+alert(result); // 1
+</code></pre>
 <p>它们对应位上只有一位同时是1</p>
 <h4 id="3-按位或（-）"><a href="#3-按位或（-）" class="headerlink" title="3.按位或（|）"></a>3.按位或（|）</h4><p>同理，按位进行或操作</p>
 <h4 id="4-按位异或（-）"><a href="#4-按位异或（-）" class="headerlink" title="4.按位异或（^）"></a>4.按位异或（^）</h4><p>异或就是相异为1相同为0</p>
-<h4 id="5-左移（-lt-lt-）"><a href="#5-左移（-lt-lt-）" class="headerlink" title="5.左移（&lt;&lt;）"></a>5.左移（&lt;&lt;）</h4><p>直接上代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oldValue = <span class="number">2</span>;               <span class="comment">// 等于二进制的 10</span></span><br><span class="line"><span class="keyword">var</span> newValue = olaValue &lt;&lt; <span class="number">5</span>;   <span class="comment">// 等于二进制的 1000000，十进制的64</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="5-左移（-lt-lt-）"><a href="#5-左移（-lt-lt-）" class="headerlink" title="5.左移（&lt;&lt;）"></a>5.左移（&lt;&lt;）</h4><p>直接上代码</p>
+<pre><code class="javascript">var oldValue = 2;               // 等于二进制的 10
+var newValue = olaValue &lt;&lt; 5;   // 等于二进制的 1000000，十进制的64
+</code></pre>
 <p>注意，左移不会影响符号位。如果将-2向左移动5位，结果将是-64。</p>
-<h4 id="6-右移（-gt-gt-）"><a href="#6-右移（-gt-gt-）" class="headerlink" title="6.右移（&gt;&gt;）"></a>6.右移（&gt;&gt;）</h4><p>一样，但是被移出去的位会消失<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oldValue = <span class="number">64</span>;               <span class="comment">// 等于二进制的 1000000</span></span><br><span class="line"><span class="keyword">var</span> newValue = olaValue &gt;&gt; <span class="number">5</span>;    <span class="comment">// 等于二进制的 10，十进制的2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">var</span> b = a &gt;&gt; <span class="number">1</span>; <span class="comment">// 1</span></span><br><span class="line"><span class="keyword">var</span> c = a &gt;&gt; <span class="number">2</span>; <span class="comment">// 0</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="6-右移（-gt-gt-）"><a href="#6-右移（-gt-gt-）" class="headerlink" title="6.右移（&gt;&gt;）"></a>6.右移（&gt;&gt;）</h4><p>一样，但是被移出去的位会消失</p>
+<pre><code class="javascript">var oldValue = 64;               // 等于二进制的 1000000
+var newValue = olaValue &gt;&gt; 5;    // 等于二进制的 10，十进制的2
+
+var a = 3;
+var b = a &gt;&gt; 1; // 1
+var c = a &gt;&gt; 2; // 0
+</code></pre>
 <h3 id="布尔操作符"><a href="#布尔操作符" class="headerlink" title="布尔操作符"></a>布尔操作符</h3><p>主要要注意的是非布尔类型的转换</p>
 <h4 id="1-逻辑非（！）"><a href="#1-逻辑非（！）" class="headerlink" title="1.逻辑非（！）"></a>1.逻辑非（！）</h4><ul>
 <li>如果操作数是一个对象，返回false</li>
@@ -543,11 +572,24 @@
 </ul>
 <p>实际上这就是把操作数用<code>Boolean()</code>函数转换后进行逻辑非运算</p>
 <h4 id="2-逻辑与（-amp-amp-）"><a href="#2-逻辑与（-amp-amp-）" class="headerlink" title="2.逻辑与（&amp;&amp;）"></a>2.逻辑与（&amp;&amp;）</h4><p>这里有一个特点：如果第一个操作数是对象，且第一个操作数求值结果为true时返回第二个操作数，而第一个操作数是undefined则返回undefined</p>
-<p>因此会有一种技巧<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = (res &amp;&amp; res.result); <span class="comment">// res由其他地方传入</span></span><br></pre></td></tr></table></figure></p>
+<p>因此会有一种技巧</p>
+<pre><code class="javascript">var result = (res &amp;&amp; res.result); // res由其他地方传入
+</code></pre>
 <p>如果res未被定义则会返回undefined，而不会因为访问了undefined的属性而报错</p>
-<p>不用再写繁琐的if结构<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(res)&#123;</span><br><span class="line">    <span class="keyword">var</span> result = res.result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>不用再写繁琐的if结构</p>
+<pre><code class="javascript">if(res){
+    var result = res.result;
+}
+</code></pre>
 <h4 id="3-逻辑或（-）"><a href="#3-逻辑或（-）" class="headerlink" title="3.逻辑或（||）"></a>3.逻辑或（||）</h4><p>这里有点不同：如果第一个操作数是对象则返回第一个操作数，如果第一个操作数求值结果为false返回第二个操作数，如果两个操作数都是undefined则返回undefined</p>
-<p>看例子比较明白<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    a = a || <span class="number">1</span></span><br><span class="line">    b = b || <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> a+b</span><br><span class="line">&#125;</span><br><span class="line">sum(); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
+<p>看例子比较明白</p>
+<pre><code class="javascript">function sum(a,b){
+    a = a || 1
+    b = b || 1
+    return a+b
+}
+sum(); // 2
+</code></pre>
 <p>可以用这个特性做函数变量的默认值</p>
 <h3 id="乘性操作符"><a href="#乘性操作符" class="headerlink" title="乘性操作符"></a>乘性操作符</h3><p>ECMAScript定义了三个乘性操作符：乘法、除法、求模</p>
 <p>如果操作数不是数值，会先使用<code>Number()</code>将其转换为数值</p>
@@ -603,6 +645,14 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2018/06/30/JavaScript-learning-3/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->
@@ -702,7 +752,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         

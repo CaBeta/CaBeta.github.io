@@ -512,7 +512,14 @@
 <h2 id="面向对象重构"><a href="#面向对象重构" class="headerlink" title="面向对象重构"></a>面向对象重构</h2><p>这次参考了udacity的<a href="https://github.com/udacity/frontend-nanodegree-arcade-game" target="_blank" rel="noopener">arcade-game</a>项目分离了engine和游戏逻辑</p>
 <p>但实际上体验一般，原来的arcade-game是一个需要更新帧动画的游戏，而engine的最大用处也是更新帧动画也就是<code>render()</code>和<code>update()</code></p>
 <p>而这个五子棋游戏并没有这样的需求,思考了一下实际上还是用MVO来写更加合理一些，把view和model分离开来</p>
-<h2 id="保留问题"><a href="#保留问题" class="headerlink" title="保留问题"></a>保留问题</h2><p>在记录游戏数据时我使用了两个虚拟棋盘，分别记录白棋和黑棋的落子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.gridWhite = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">15</span>);</span><br><span class="line"><span class="keyword">this</span>.gridBlack = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">15</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">15</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">this</span>.gridWhite[i] = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">15</span>);</span><br><span class="line">    <span class="keyword">this</span>.gridBlack[i] = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">15</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="保留问题"><a href="#保留问题" class="headerlink" title="保留问题"></a>保留问题</h2><p>在记录游戏数据时我使用了两个虚拟棋盘，分别记录白棋和黑棋的落子</p>
+<pre><code class="javascript">this.gridWhite = new Array(15);
+this.gridBlack = new Array(15);
+for (let i = 0; i &lt; 15; i++) {
+    this.gridWhite[i] = new Array(15);
+    this.gridBlack[i] = new Array(15);
+};
+</code></pre>
 <p>这样的做法还是感觉有些奇怪，是否存在更加简洁的方法？不论从语法上还是从逻辑上</p>
 <h2 id="AI"><a href="#AI" class="headerlink" title="AI"></a>AI</h2><p>AI是下次修改要添加的内容，根据网上资料主要有打分和树搜索两种方式，在制作AI的同时可能还需要修改原来的一些代码细节</p>
 <h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><p>实际上我一直想做一些UI上的改进，比如开始游戏时的交互和游戏结束时的交互，虽然这些不是最重要的，但如果真的作为一个游戏来说这些是必不可少的内容</p>
@@ -664,7 +671,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
