@@ -1,3 +1,10 @@
+// 判断平台
+const ua = navigator.userAgent;
+const ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+    isIphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+    isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+    isMobile = isIphone || isAndroid;
+
 // model
 const model = { 
     // 八个搜索同色棋子的方向
@@ -97,6 +104,12 @@ const view = {
         const canvas = document.createElement('canvas');
         canvas.width = 450;
         canvas.height = 450;
+        if (isMobile) {
+            this.EDGE = 14 * 24;
+            this.GRID_LENGTH = 24;
+            canvas.width = 366;
+            canvas.height = 366;
+        }
         document.body.appendChild(canvas);
         this.ctx = canvas.getContext('2d');
         this.render();
@@ -121,7 +134,7 @@ const view = {
         const x = octopus.getX() * this.GRID_LENGTH + this.MARGIN;
         const y = octopus.getY() * this.GRID_LENGTH + this.MARGIN;
         this.ctx.beginPath();
-        this.ctx.arc(x, y, 14, 0, 2 * Math.PI);//x,y,r,起始，结束
+        this.ctx.arc(x, y, this.GRID_LENGTH/2, 0, 2 * Math.PI);//x,y,r,起始，结束
         if (octopus.getTurn() == "white") {
             var gradient = this.ctx.createLinearGradient(
                 x - 6, y - 6, x + 60, y + 60
